@@ -8,7 +8,7 @@ app = Flask(__name__)
 def get_metadata():
     return {
         "app_name": "Docker Image Information Dashboard",
-        "app_version": os.getenv("APP_VERSION", "1.0.1",
+        "app_version": os.getenv("APP_VERSION", "1.0.1"),
         "build_number": os.getenv("BUILD_NUMBER", "1"),
         "image_tag": os.getenv("IMAGE_TAG", "local"),
         "git_commit": os.getenv("GIT_COMMIT", "development"),
