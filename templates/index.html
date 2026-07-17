@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker Image Information Dashboard</title>
+
+    <style>
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background:#f4f4f4;
+            margin:40px;
+        }
+
+        .container{
+            max-width:800px;
+            margin:auto;
+            background:white;
+            padding:25px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,.2);
+        }
+
+        h1{
+            text-align:center;
+            color:#333;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            margin-top:20px;
+        }
+
+        th,td{
+            padding:12px;
+            border:1px solid #ddd;
+        }
+
+        th{
+            background:#007BFF;
+            color:white;
+            width:35%;
+        }
+
+        tr:nth-child(even){
+            background:#f8f8f8;
+        }
+
+        .healthy{
+            color:green;
+            font-weight:bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Docker Image Information Dashboard</h1>
+
+<table>
+
+<tr>
+<th>Application Name</th>
+<td>{{ data.app_name }}</td>
+</tr>
+
+<tr>
+<th>App Version</th>
+<td>{{ data.app_version }}</td>
+</tr>
+
+<tr>
+<th>Build Number</th>
+<td>{{ data.build_number }}</td>
+</tr>
+
+<tr>
+<th>Docker Image Tag</th>
+<td>{{ data.image_tag }}</td>
+</tr>
+
+<tr>
+<th>Git Commit SHA</th>
+<td>{{ data.git_commit }}</td>
+</tr>
+
+<tr>
+<th>Deployment Time</th>
+<td>{{ data.deployment_time }}</td>
+</tr>
+
+<tr>
+<th>Environment</th>
+<td>{{ data.environment }}</td>
+</tr>
+
+<tr>
+<th>Hostname</th>
+<td>{{ data.hostname }}</td>
+</tr>
+
+<tr>
+<th>Current Time</th>
+<td>{{ data.current_time }}</td>
+</tr>
+
+<tr>
+<th>Status</th>
+<td class="healthy">{{ data.status }}</td>
+</tr>
+
+</table>
+
+</div>
+
+</body>
+</html>
