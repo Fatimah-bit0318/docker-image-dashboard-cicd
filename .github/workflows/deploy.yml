@@ -24,9 +24,30 @@ jobs:
           pip install -r requirements.txt
           pip install pytest
 
+      - name: Debug repository
+        run: |
+          echo "Current directory:"
+          pwd
+
+          echo ""
+          echo "Repository contents:"
+          ls -la
+
+          echo ""
+          echo "Tests directory:"
+          ls -la tests || true
+
+          echo ""
+          echo "Files under tests:"
+          find tests -type f || true
+
+          echo ""
+          echo "Contents of test_app.py:"
+          cat tests/test_app.py || true
+
       - name: Run tests
         run: |
-          PYTHONPATH=. python3 -m pytest tests/
+          PYTHONPATH=. python3 -m pytest tests/ -v
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
