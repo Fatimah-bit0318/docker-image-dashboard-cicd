@@ -16,17 +16,17 @@ spec:
         app: docker-dashboard
 
     spec:
+      imagePullSecrets:
+        - name: ecr-secret
+
       containers:
         - name: dashboard
-          # GitHub Actions replaces this with the exact AWS ECR image.
           image: 834176180969.dkr.ecr.eu-north-1.amazonaws.com/docker-image-dashboard:latest
           imagePullPolicy: Always
 
           ports:
             - containerPort: 5000
 
-          # Deploy-time metadata only.
-          # GitHub Actions updates these values during deployment.
           env:
             - name: ENVIRONMENT
               value: "Production"
