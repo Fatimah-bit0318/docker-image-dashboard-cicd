@@ -17,18 +17,19 @@ spec:
 
     spec:
       containers:
-      - name: dashboard
-        image: famaaaa04/docker-image-dashboard:latest
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 5000
+        - name: dashboard
+          # GitHub Actions replaces this with the exact AWS ECR image.
+          image: 834176180969.dkr.ecr.eu-north-1.amazonaws.com/docker-image-dashboard:latest
+          imagePullPolicy: Always
 
-        env:
-        - name: ENVIRONMENT
-          value: "Kubernetes"
+          ports:
+            - containerPort: 5000
 
-        - name: DEPLOYMENT_TIME
-          value: "Day-28"
+          # Deploy-time metadata only.
+          # GitHub Actions updates these values during deployment.
+          env:
+            - name: ENVIRONMENT
+              value: "Production"
 
-        - name: IMAGE_TAG
-          value: "v2"
+            - name: DEPLOYMENT_TIME
+              value: "Initial Deployment"
