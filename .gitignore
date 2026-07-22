@@ -1,5 +1,18 @@
+# Python
 venv/
 __pycache__/
 *.pyc
 .pytest_cache/
+
+# Environment / Secrets
 .env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*
+secrets*
+
+# OS / Editor
+.DS_Store
+.vscode/
