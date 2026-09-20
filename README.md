@@ -467,7 +467,7 @@ This allows Kubernetes to safely replace an older application version with the l
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repository-url>
+git clone <https://github.com/Fatimah-bit0318/docker-image-dashboard-cicd>
 cd docker-image-dashboard
 ```
 
